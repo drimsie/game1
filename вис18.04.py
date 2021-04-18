@@ -15,6 +15,7 @@ RIGHT = 2
 pg.init()
 screen=pg.display.set_mode ((Window.width, Window.height))
 clock=pg.time.Clock()
+d=100
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -62,11 +63,10 @@ while running:
                     user_symbols.append(i)
                     
             if len(spots) > 0: choice = RIGHT
-            else: choice = WRONG
-            
-            if len(spots) == 0:
+            else:
+                choice = WRONG
                 counter=counter+1
-                print(counter)
+#                 print(counter)
                 
             
 
@@ -90,7 +90,7 @@ while running:
         screen.blit(text4, (Window.centr_x-100, Window.centr_y-30))
         for b, _ in enumerate(a):
             text6 = font1.render(a[b], True, BLACK)
-            screen.blit(text6, (72+b*100, 310))
+            screen.blit(text6, (80+b*d, 310))
 
 
     if choice == RIGHT:
@@ -102,7 +102,7 @@ while running:
 
     for j in user_symbols:
         text3 = font1.render(a[j], True, BLACK)
-        screen.blit(text3, (72+j*100, 310))
+        screen.blit(text3, (80+j*d, 310))
     
 
     
