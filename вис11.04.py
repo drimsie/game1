@@ -89,12 +89,11 @@ while running:
     if is_game_over == True:
         text4 = font2.render("Вы проиграли", True, RED)
         screen.blit(text4, (Window.centr_x-100, Window.centr_y-30))
-        for b in enumerate(a):
+        for b, _ in enumerate(a):
             text6 = font1.render(a[b], True, BLACK)
             screen.blit(text6, (72+b*100, 310))
-#         for i in enumerate(a):
-#             text3 = font1.render(a[i], True, BLACK)
-#             screen.blit(text3, (72+i*100, 310))
+
+
     if choice == RIGHT:
         if len(a)!=len(user_symbols): choice = WRONG
         else:
